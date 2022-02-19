@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.capgemini.caua.teste.exercicio03</groupId>
@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+	<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<maven.compiler.target>1.17</maven.compiler.target>
     <maven.compiler.source>1.17</maven.compiler.source>
@@ -24,4 +25,38 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+	
+	<build>
+
+		<plugins> 
+
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-assembly-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <phase>package</phase>
+		            <goals>
+		                <goal>single</goal>
+		            </goals>
+		            <configuration>
+		                <archive>
+		                <manifest>
+		                    <mainClass>
+		                        com.capgemini.caua.teste.exercicio03.Exercicio_03
+		                    </mainClass>
+		                </manifest>
+		                </archive>
+		                <descriptorRefs>
+		                    <descriptorRef>jar-with-dependencies</descriptorRef>
+		                </descriptorRefs>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+
+		</plugins>
+
+	</build>
+	
 </project>

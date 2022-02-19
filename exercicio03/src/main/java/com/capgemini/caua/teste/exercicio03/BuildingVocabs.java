@@ -4,13 +4,22 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Build the vocabs that will be analyzed.
+ * 
+ * @author Caua de M. Scarabelotti.
+ *
+ */
+
 public class BuildingVocabs {
+	
 	/**
 	 * Build {@link Map} of different words.
 	 * 
 	 * @param s
 	 * @return
 	 */
+	
 	static HashMap<String, Integer> findAnagrams(String s) {
 		HashMap<String, Integer> anagramasCount = new HashMap<>();
 		for (int i = 0; i < s.length(); i++) {

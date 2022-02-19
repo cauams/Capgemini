@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.capgemini.caua.teste.exercicio01","l":"Exercicio_01"},{"p":"com.capgemini.caua.teste.exercicio01","l":"PrintStairs"},{"p":"com.capgemini.caua.teste.exercicio01","l":"PromptUser"}];updateSearchResults();

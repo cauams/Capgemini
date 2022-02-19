@@ -2,13 +2,19 @@ package com.capgemini.caua.teste.exercicio02;
 
 import java.util.Scanner;
 
+/**
+ * Do the verifications.
+ * 
+ * @author Caua de M. Scarabelotti.
+ *
+ */
+
 public class ValidatePassword {
-	
-	
+
 	public static void getValidPassword() {
 		boolean passwordIsInvalid = true;
 		Scanner scanner = new Scanner(System.in);
-		
+
 		while (passwordIsInvalid) {
 			String userPassword = PromptUserPassword.getUserPassword(scanner);
 
@@ -34,8 +40,7 @@ public class ValidatePassword {
 		}
 		scanner.close();
 	}
-	
-	
+
 	/**
 	 * Check if the password attends at the length requisit.
 	 * 
@@ -43,7 +48,7 @@ public class ValidatePassword {
 	 * @param messageInvalid
 	 * @return
 	 */
-	
+
 	private static String passwordLengthCheck(String userPassword, String messageInvalid) {
 		boolean passwordIsGreaterThanSix = userPassword.length() < 6;
 		if (passwordIsGreaterThanSix) {
@@ -52,7 +57,7 @@ public class ValidatePassword {
 		}
 		return messageInvalid;
 	}
-	
+
 	/**
 	 * Check if the password contains at least "one digit".
 	 * 
@@ -76,7 +81,7 @@ public class ValidatePassword {
 	 * @param messageInvalid
 	 * @return
 	 */
-	
+
 	private static String passwordLowerCharCheck(String userPassword, String messageInvalid) {
 		boolean passwordHasLowerCase = userPassword.chars().anyMatch(Character::isLowerCase);
 		if (!passwordHasLowerCase) {
@@ -92,7 +97,7 @@ public class ValidatePassword {
 	 * @param messageInvalid
 	 * @return
 	 */
-	
+
 	private static String passwordUpperCharCheck(String userPassword, String messageInvalid) {
 		boolean passwordHasUpperCase = userPassword.chars().anyMatch(Character::isUpperCase);
 		if (!passwordHasUpperCase) {
@@ -100,9 +105,9 @@ public class ValidatePassword {
 		}
 		return messageInvalid;
 	}
-	
+
 	/**
-	 * Check if the password contains at least one "special character". 
+	 * Check if the password contains at least one "special character".
 	 * 
 	 * @param userPassword
 	 * @param messageInvalid
@@ -117,7 +122,7 @@ public class ValidatePassword {
 		}
 		return messageInvalid;
 	}
-	
+
 	/**
 	 * Return a message that helps the user to create a stronger password.
 	 * 

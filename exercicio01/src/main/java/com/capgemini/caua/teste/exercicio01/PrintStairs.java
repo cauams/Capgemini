@@ -1,5 +1,12 @@
 package com.capgemini.caua.teste.exercicio01;
 
+/**
+ * Print the stair.
+ * 
+ * @author Caua de M. Scarabelotti.
+ *
+ */
+
 public class PrintStairs {
 	
 	/**

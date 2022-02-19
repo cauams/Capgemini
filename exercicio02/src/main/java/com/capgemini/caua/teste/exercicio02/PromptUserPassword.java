@@ -2,6 +2,13 @@ package com.capgemini.caua.teste.exercicio02;
 
 import java.util.Scanner;
 
+/**
+ * Get the user input.
+ * 
+ * @author Caua de M. Scarabelotti.
+ *
+ */
+
 public class PromptUserPassword {	
 	
 	/**
