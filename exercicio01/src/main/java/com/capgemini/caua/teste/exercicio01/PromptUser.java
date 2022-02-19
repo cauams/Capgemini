@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class PromptUser {
 
 	/**
-	 * 
+	 * Get the number of steps from the user.
 	 * 
 	 * @param scanner
 	 * @return

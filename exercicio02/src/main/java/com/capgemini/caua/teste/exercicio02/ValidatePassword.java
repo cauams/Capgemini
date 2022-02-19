@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class ValidatePassword {
 	
-
+	
 	public static void getValidPassword() {
 		boolean passwordIsInvalid = true;
 		Scanner scanner = new Scanner(System.in);
+		
 		while (passwordIsInvalid) {
 			String userPassword = PromptUserPassword.getUserPassword(scanner);
 
@@ -33,7 +34,16 @@ public class ValidatePassword {
 		}
 		scanner.close();
 	}
-
+	
+	
+	/**
+	 * Check if the password attends at the length requisit.
+	 * 
+	 * @param userPassword
+	 * @param messageInvalid
+	 * @return
+	 */
+	
 	private static String passwordLengthCheck(String userPassword, String messageInvalid) {
 		boolean passwordIsGreaterThanSix = userPassword.length() < 6;
 		if (passwordIsGreaterThanSix) {
@@ -42,6 +52,14 @@ public class ValidatePassword {
 		}
 		return messageInvalid;
 	}
+	
+	/**
+	 * Check if the password contains at least "one digit".
+	 * 
+	 * @param userPassword
+	 * @param messageInvalid
+	 * @return
+	 */
 
 	private static String passwordDigitCheck(String userPassword, String messageInvalid) {
 		boolean passwordHasDigit = userPassword.chars().anyMatch(Character::isDigit);
@@ -51,6 +69,14 @@ public class ValidatePassword {
 		return messageInvalid;
 	}
 
+	/**
+	 * Check if the password contains at least one "lower case character".
+	 * 
+	 * @param userPassword
+	 * @param messageInvalid
+	 * @return
+	 */
+	
 	private static String passwordLowerCharCheck(String userPassword, String messageInvalid) {
 		boolean passwordHasLowerCase = userPassword.chars().anyMatch(Character::isLowerCase);
 		if (!passwordHasLowerCase) {
@@ -59,6 +85,14 @@ public class ValidatePassword {
 		return messageInvalid;
 	}
 
+	/**
+	 * Check if the password contains at least one "upper case character".
+	 * 
+	 * @param userPassword
+	 * @param messageInvalid
+	 * @return
+	 */
+	
 	private static String passwordUpperCharCheck(String userPassword, String messageInvalid) {
 		boolean passwordHasUpperCase = userPassword.chars().anyMatch(Character::isUpperCase);
 		if (!passwordHasUpperCase) {
@@ -66,6 +100,14 @@ public class ValidatePassword {
 		}
 		return messageInvalid;
 	}
+	
+	/**
+	 * Check if the password contains at least one "special character". 
+	 * 
+	 * @param userPassword
+	 * @param messageInvalid
+	 * @return
+	 */
 
 	private static String passwordSpecialCharCheck(String userPassword, String messageInvalid) {
 		boolean passwordHasSpecialChar = userPassword.chars()
@@ -75,6 +117,15 @@ public class ValidatePassword {
 		}
 		return messageInvalid;
 	}
+	
+	/**
+	 * Return a message that helps the user to create a stronger password.
+	 * 
+	 * @param messageInvalid
+	 * @param startMessage
+	 * @param continueMessage
+	 * @return
+	 */
 
 	private static String addInvalidConditionMessage(String messageInvalid, String startMessage,
 			String continueMessage) {
